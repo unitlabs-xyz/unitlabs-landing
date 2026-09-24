@@ -38,6 +38,8 @@ The line: "We build products for the onchain world."
 - The page is a static Next.js 16 site (App Router) served at `https://unitlabs.xyz`. No CMS,
   no backend; content is edited in code, links in `lib/links.ts`.
 - Dev server: `npm run dev -- -p 3200` inside `unit-landing`.
+- Vercel Web Analytics and Speed Insights are mounted in the root layout (added 24 September
+  2026). Both are cookieless; no consent banner is needed.
 
 ## Capabilities and Constraints
 
