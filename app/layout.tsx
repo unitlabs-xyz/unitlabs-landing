@@ -1,11 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
-// Set NEXT_PUBLIC_SITE_URL to the deployed origin so social previews resolve to absolute URLs.
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3200";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL("https://unitlabs.xyz"),
   title: "UnitLabs",
   description:
     "UnitLabs is an independent product lab building crypto-native products, protocols, and financial infrastructure.",

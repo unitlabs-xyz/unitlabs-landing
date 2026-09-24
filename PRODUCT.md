@@ -35,8 +35,8 @@ The line: "We build products for the onchain world."
 
 - A small team ships several products in parallel from sibling repositories under
   `Desktop/unit` (`mercury`, `mercury-app`, `mercury-landing`, `amplifi`).
-- The page is a static Next.js 16 site (App Router). No CMS, no backend; content is edited in
-  code, links in `lib/links.ts`.
+- The page is a static Next.js 16 site (App Router) served at `https://unitlabs.xyz`. No CMS,
+  no backend; content is edited in code, links in `lib/links.ts`.
 - Dev server: `npm run dev -- -p 3200` inside `unit-landing`.
 
 ## Capabilities and Constraints
