@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-24T11:31:41Z",
+  "title": "Design System: UnitLabs",
+  "extensions": {
+    "colorMeta": {
+      "signal-red": {
+        "role": "primary",
+        "displayName": "Signal Red",
+        "canonical": "oklch(58% 0.22 27)",
+        "tonalRamp": [
+          "oklch(15% 0.22 27)",
+          "oklch(26% 0.22 27)",
+          "oklch(38% 0.22 27)",
+          "oklch(49% 0.22 27)",
+          "oklch(61% 0.22 27)",
+          "oklch(72% 0.22 27)",
+          "oklch(84% 0.22 27)",
+          "oklch(95% 0.22 27)"
+        ]
+      },
+      "cream-paper": {
+        "role": "neutral",
+        "displayName": "Cream Paper",
+        "canonical": "oklch(93% 0.03 100)",
+        "tonalRamp": [
+          "oklch(15% 0.03 100)",
+          "oklch(26% 0.03 100)",
+          "oklch(38% 0.03 100)",
+          "oklch(49% 0.03 100)",
+          "oklch(61% 0.03 100)",
+          "oklch(72% 0.03 100)",
+          "oklch(84% 0.03 100)",
+          "oklch(95% 0.03 100)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The hero headline only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "The closing statement above the buttons; 16ch measure."
+      },
+      "body-large": {
+        "displayName": "Body large",
+        "purpose": "The hero description; 34ch measure."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Everything else."
+      },
+      "label-ui": {
+        "displayName": "Label UI",
+        "purpose": "Nav link, bracket buttons, footer text."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Every hover transition."
+      },
+      {
+        "name": "duration-flip",
+        "value": "0.2s",
+        "purpose": "Button inversion and rise."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "stack",
+        "value": "760px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Bracket Button",
+      "kind": "button",
+      "refersTo": "button-bracket",
+      "description": "Outlined, uppercase, wrapped in literal brackets; inverts to solid red on hover.",
+      "html": "<a class=\"ds-btn-bracket\" href=\"#\">Contact</a>",
+      "css": ".ds-btn-bracket { display: inline-block; font-family: 'Array', ui-sans-serif, system-ui, sans-serif; font-weight: 600; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink, #E02329); background: transparent; padding: 12px 20px; border: 1px solid var(--ink, #E02329); border-radius: 0; text-decoration: none; transition: background .2s, color .2s, transform .2s cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-bracket::before { content: '[ '; } .ds-btn-bracket::after { content: ' ]'; } .ds-btn-bracket:hover { background: var(--ink, #E02329); color: var(--bg, #EDEBD6); transform: translateY(-2px); } .ds-btn-bracket:active { transform: translateY(0); } .ds-btn-bracket:focus-visible { outline: 2px solid var(--ink, #E02329); outline-offset: 4px; }"
+    },
+    {
+      "name": "Nav Bar",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Brand lockup (monogram + name) at left, single uppercase link at right; the link underlines on hover.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\"><svg class=\"ds-mark ds-mark-sm\" viewBox=\"0 0 308.3 428.8\" fill=\"currentColor\" role=\"img\" aria-label=\"UnitLabs\"><circle cx=\"13.6\" cy=\"13.6\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"13.7\" r=\"13.6\"/><circle cx=\"254.6\" cy=\"13.6\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"13.7\" r=\"13.6\"/><circle cx=\"13.7\" cy=\"53.8\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"53.7\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"53.8\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"53.8\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"94.0\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"94.0\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"94.0\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"94.0\" r=\"13.6\"/><circle cx=\"53.7\" cy=\"134.1\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"134.1\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"134.1\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"134.2\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"174.3\" r=\"13.6\"/><circle cx=\"53.7\" cy=\"174.3\" r=\"13.6\"/><circle cx=\"254.6\" cy=\"174.3\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"174.3\" r=\"13.6\"/><circle cx=\"13.7\" cy=\"214.4\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"214.4\" r=\"13.6\"/><circle cx=\"254.6\" cy=\"214.5\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"214.4\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"254.6\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"254.6\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"254.6\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"254.6\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"93.9\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"214.4\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"93.9\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"134.1\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"174.3\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"214.4\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"93.9\" cy=\"375.1\" r=\"13.6\"/><circle cx=\"134.1\" cy=\"375.0\" r=\"13.6\"/><circle cx=\"174.2\" cy=\"375.0\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"375.2\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"375.2\" r=\"13.6\"/><circle cx=\"214.4\" cy=\"375.1\" r=\"13.6\"/><circle cx=\"53.9\" cy=\"415.1\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"415.2\" r=\"13.6\"/></svg><span>UnitLabs</span></a><a class=\"ds-nav-link\" href=\"#\">Contact</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; color: var(--ink, #E02329); } .ds-brand { display: inline-flex; align-items: center; gap: 12px; font-family: 'Array', ui-sans-serif, system-ui, sans-serif; font-weight: 700; font-size: 22px; line-height: 1; letter-spacing: -.01em; color: var(--ink, #E02329); text-decoration: none; } .ds-mark-sm { width: 26px; height: auto; } .ds-brand span { transform: translateY(-1.5px); } .ds-nav-link { font-family: 'Array', ui-sans-serif, system-ui, sans-serif; font-weight: 600; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink, #E02329); text-decoration: none; } .ds-nav-link:hover { text-decoration: underline; text-underline-offset: .18em; } .ds-nav-link:focus-visible { outline: 2px solid var(--ink, #E02329); outline-offset: 4px; }"
+    },
+    {
+      "name": "Monogram",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "The dot-matrix U, drawn as SVG circles.",
+      "html": "<svg class=\"ds-mark\" viewBox=\"0 0 308.3 428.8\" fill=\"currentColor\" role=\"img\" aria-label=\"UnitLabs\"><circle cx=\"13.6\" cy=\"13.6\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"13.7\" r=\"13.6\"/><circle cx=\"254.6\" cy=\"13.6\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"13.7\" r=\"13.6\"/><circle cx=\"13.7\" cy=\"53.8\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"53.7\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"53.8\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"53.8\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"94.0\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"94.0\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"94.0\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"94.0\" r=\"13.6\"/><circle cx=\"53.7\" cy=\"134.1\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"134.1\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"134.1\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"134.2\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"174.3\" r=\"13.6\"/><circle cx=\"53.7\" cy=\"174.3\" r=\"13.6\"/><circle cx=\"254.6\" cy=\"174.3\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"174.3\" r=\"13.6\"/><circle cx=\"13.7\" cy=\"214.4\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"214.4\" r=\"13.6\"/><circle cx=\"254.6\" cy=\"214.5\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"214.4\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"254.6\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"254.6\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"254.6\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"254.6\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"93.9\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"214.4\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"93.9\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"134.1\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"174.3\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"214.4\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"93.9\" cy=\"375.1\" r=\"13.6\"/><circle cx=\"134.1\" cy=\"375.0\" r=\"13.6\"/><circle cx=\"174.2\" cy=\"375.0\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"375.2\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"375.2\" r=\"13.6\"/><circle cx=\"214.4\" cy=\"375.1\" r=\"13.6\"/><circle cx=\"53.9\" cy=\"415.1\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"415.2\" r=\"13.6\"/></svg>",
+      "css": ".ds-mark { width: 64px; height: auto; color: var(--ink, #E02329); }"
+    },
+    {
+      "name": "Display Headline",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "The hero statement in Array 700; wraps to several short lines by design.",
+      "html": "<h1 class=\"ds-display\">We build products for the onchain world.</h1>",
+      "css": ".ds-display { margin: 0; font-family: 'Array', ui-sans-serif, system-ui, sans-serif; font-weight: 700; font-size: 56px; line-height: 1; letter-spacing: -.02em; color: var(--ink, #E02329); max-width: 12ch; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Dot-Matrix Manifesto",
+    "overview": "One ink, one typeface, one grid. The page reads like a statement printed in red dots on cream paper: the wordmark is literally a grid of circles, and the Array typeface renders every headline in the same dotted texture, so the type and the logo are the same material. Nothing on the page is decorative. Depth, hierarchy and emphasis all come from size, weight, case and 1px rules, never from a second colour.\n\nThe voice is plain-spoken. Sentences are short and declarative, set large, with generous vertical space between them. The system says as little as possible and lets the ink do the work. Interaction follows the same logic: things look printed, then flip like a switch on hover: an outline becomes solid. Nothing fades in, nothing scrolls into view.\n\nThe user has rejected the crypto-site defaults outright: no glassmorphism or gradients, no dark mode, no stock imagery or 3D, and no colour beyond the two inks.",
+    "keyCharacteristics": [
+      "Two colours only: Signal Red on Cream Paper. No greys, tints or opacity tricks.",
+      "One typeface (Array) carrying every role from 14px labels to 84px display.",
+      "Structure drawn with 1px Signal Red rules that span the full viewport.",
+      "Square corners everywhere except the dots themselves, which are perfect circles.",
+      "Static page: hover transitions are the only motion."
+    ],
+    "rules": [
+      {
+        "name": "The One Ink Rule",
+        "body": "Everything is Signal Red on Cream Paper. No third colour, no grey, no tint of red, and no opacity used to fake a secondary tone. Hierarchy is the type's job.",
+        "section": "colors"
+      },
+      {
+        "name": "The Inversion Rule",
+        "body": "The only permitted colour change is a full swap: red on cream becomes cream on red for a hovered control. Partial fills and mixed states do not exist.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Face Rule",
+        "body": "Array only, in three weights. Hierarchy is carried by size, weight, case and tracking, never by colour and never by a second family, including monospace for numbers.",
+        "section": "typography"
+      },
+      {
+        "name": "The Short Line Rule",
+        "body": "Display and headline copy is one sentence. Measures are capped (headline 16ch, body large 34ch) so lines stay short enough to read as printed statements.",
+        "section": "typography"
+      },
+      {
+        "name": "The Ruled Sheet Rule",
+        "body": "Structure is drawn, not implied. Bands are separated by 1px Signal Red rules; there are no background panels, cards or containers to group content.",
+        "section": "layout"
+      },
+      {
+        "name": "The Square Print Rule",
+        "body": "Corners are square. Circles are reserved for the dot grid; no pill buttons, rounded cards or soft edges.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Switch Rule",
+        "body": "Hover is a state flip, not a fade. Outline becomes solid. Durations stay at or under 0.45s with the standard ease (cubic-bezier(0.22, 1, 0.36, 1)); nothing scales up, bounces or glows.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do set every colour from the two tokens: Signal Red (#E02329) on Cream Paper (#EDEBD6), inverted only for a hovered control.",
+      "Do draw structure with 1px Signal Red rules that span the full viewport; they are the only structural lines.",
+      "Do render the wordmark and monogram from the circle data in lib/dots.ts as SVG so they stay crisp; never rasterise or re-trace them.",
+      "Do carry hierarchy with Array's size, weight, case and tracking; three weights (400, 600, 700) are enough.",
+      "Do keep copy plain-spoken: one sentence per headline, capped measures, no adjectives for their own sake.",
+      "Do keep hover as the only motion: a 0.2s inversion on buttons and an underline on links."
+    ],
+    "donts": [
+      "Don't use glassmorphism, gradients, glows, blur panels or gradient text.",
+      "Don't add a dark mode; Cream Paper is the only background.",
+      "Don't use stock imagery, photography, illustrations or 3D shapes.",
+      "Don't introduce a third colour, a grey, a tint of red, or opacity used as a tone.",
+      "Don't add entrance, scroll or loading animation; the page is static by decision.",
+      "Don't round corners, add cards or background panels, or reach for a second typeface."
+    ]
+  }
+}
