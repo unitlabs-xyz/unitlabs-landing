@@ -6,5 +6,6 @@ export const LINKS = {
   mercury: "#", // TODO: Mercury product URL
   x: "https://x.com/unitlabs_xyz",
   github: "https://github.com/unitlabs-xyz",
+  email: "hello@unitlabs.xyz",
   contact: "mailto:hello@unitlabs.xyz",
 };

@@ -43,12 +43,14 @@ The line: "We build products for the onchain world."
 
 ## Capabilities and Constraints
 
-- **Two sections only.** Hero (headline and description; no wordmark and no "What we build"
-  list, both removed by user decision on 24 September 2026; the nav shows the U monogram and
-  the name) and
-  contact (closing line with X, GitHub and Contact buttons), plus a footer bar. The user decided
-  this on 24 September 2026 after seeing a longer draft; no product showcase or portfolio.
-- **Static.** No entrance or scroll animation. Hover effects only. User decision.
+- **One screen, no scroll.** Since 4 November 2026 (user decision) the whole site is a single
+  viewport: header (brand only), hero (headline and description; no wordmark and no "What we build" list, both
+  removed on 24 September 2026) and a contact band along the bottom (closing line with X, GitHub
+  and email-address buttons). No footer and no copyright line. It replaced the two-screen layout
+  of 24 September; no product showcase or portfolio.
+- **Static.** No entrance or scroll animation. Hover effects only. User decision. (Lenis eased
+  scrolling was added and then removed the same day, 4 November 2026, once the page stopped
+  scrolling.)
 - **What we build** (Financial products; Protocols; Developer infrastructure; Consumer crypto;
   Onchain applications) was in the original brief but the user removed the list from the page on
   24 September 2026. It remains true of the lab; do not reintroduce it unasked.
@@ -66,7 +68,10 @@ The line: "We build products for the onchain world."
 
 - **Name:** UnitLabs, one word in copy. The wordmark reads UNIT LABS on two lines.
 - **Binding visual constraints the user volunteered:** background `#EDEBD6`, ink `#E02329`, no
-  other colours; the Array typeface from Fontshare (weights 400, 600, 700 are served). The
+  other colours; Cabinet Grotesk from Fontshare (weights 500 and 800, self-hosted in
+  `app/fonts/`). On 4 November 2026 the user replaced the original Array (dot-matrix) typeface
+  with "a simple font" (General Sans), then asked for a better one and picked Cabinet Grotesk
+  from six candidates; the dot texture now lives only in the mark. The
   reference for simplicity is web3labs.studio.
 - **Assets:** dot-matrix wordmark and "U" monogram, exported from Figma at
   `Desktop/unit/Frame 2.png`, `Frame 4.png`, `Frame 5.png`; extracted as circle coordinates in
@@ -88,19 +93,21 @@ The line: "We build products for the onchain world."
 
 ## Product Principles
 
-1. **Say less.** One page, two sections. Every addition must justify itself against the user's
+1. **Say less.** One screen. Every addition must justify itself against the user's
    "as simple as possible".
 2. **Own it.** Copy speaks as a builder of its own products, never as a vendor or a service.
-3. **The wordmark is the brand.** Two colours, one typeface, the dot grid. Nothing decorative
+3. **The wordmark is the brand.** Two colours, one plain typeface, the dot-grid mark. Nothing decorative
    beyond that.
 4. **Truthful links only.** A placeholder never becomes a live claim until the real destination
    exists.
-5. **Reach the team in one click.** Contact is the conversion; keep it reachable at the top and
-   the bottom.
+5. **Reach the team in one click.** Contact is the conversion. The site is one screen, so the
+   contact band is always in view: one click on the email button, which shows the address
+   itself so it works without a mail app. (The nav "Contact" link was dropped on 4 November 2026
+   as a duplicate.)
 
 ## Accessibility & Inclusion
 
-The brand red on cream measures about 3.9:1 contrast. That passes WCAG AA for large text
-(headlines and the list) but not for body-size text. The user was told and kept the palette; no
-accessibility standard has been made binding. Reduced-motion preferences are respected, since
+The brand red on cream measures 3.93:1 contrast, which passes WCAG AA for large text only. The
+user kept the palette and, on 4 November 2026, chose to pass by size: all readable text is set at
+WCAG large size (24px+ regular, 19px+ bold), so every text role on the page meets AA. Reduced-motion preferences are respected, since
 only hover transitions exist.

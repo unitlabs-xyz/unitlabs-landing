@@ -1,11 +1,25 @@
 import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
+// Cabinet Grotesk (Fontshare), self-hosted. 500 for the lede, 800 for everything else.
+const cabinetGrotesk = localFont({
+  src: [
+    { path: "./fonts/CabinetGrotesk-Medium.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/CabinetGrotesk-Extrabold.woff2", weight: "800", style: "normal" },
+  ],
+  variable: "--font-sans",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://unitlabs.xyz"),
-  title: "UnitLabs",
+  title: {
+    default: "UnitLabs · We build products for the onchain world",
+    template: "%s · UnitLabs",
+  },
   description:
     "UnitLabs is an independent product lab building crypto-native products, protocols, and financial infrastructure.",
   openGraph: {
@@ -23,19 +37,12 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#EDEBD6",
+  colorScheme: "only light",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://api.fontshare.com" />
-        <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
-        <link
-          href="https://api.fontshare.com/v2/css?f[]=array@400,600,700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" className={cabinetGrotesk.variable}>
       <body>
         {children}
         <Analytics />
