@@ -1,38 +1,44 @@
 ---
 name: UnitLabs
-description: One red ink on cream paper, printed in dots. A plain-spoken landing page for an independent onchain product lab.
+description: One red ink on cream paper, with a dot-matrix mark. A plain-spoken landing page for an independent onchain product lab.
 colors:
   signal-red: "#E02329"
   cream-paper: "#EDEBD6"
 typography:
   display:
-    fontFamily: "Array, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(40px, 6vw, 84px)"
-    fontWeight: 700
-    lineHeight: 1
+    fontFamily: "Cabinet Grotesk, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(40px, 7vw, 96px)"
+    fontWeight: 800
+    lineHeight: 0.95
     letterSpacing: "-0.02em"
   headline:
-    fontFamily: "Array, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(34px, 5vw, 72px)"
-    fontWeight: 700
-    lineHeight: 1
+    fontFamily: "Cabinet Grotesk, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(36px, 5.5vw, 80px)"
+    fontWeight: 800
+    lineHeight: 0.98
     letterSpacing: "-0.02em"
   body-large:
-    fontFamily: "Array, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(18px, 1.6vw, 22px)"
-    fontWeight: 400
-    lineHeight: 1.4
+    fontFamily: "Cabinet Grotesk, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(24px, 2vw, 28px)"
+    fontWeight: 500
+    lineHeight: 1.3
   body:
-    fontFamily: "Array, ui-sans-serif, system-ui, sans-serif"
+    fontFamily: "Cabinet Grotesk, ui-sans-serif, system-ui, sans-serif"
     fontSize: "17px"
-    fontWeight: 400
+    fontWeight: 500
     lineHeight: 1.45
+  brand:
+    fontFamily: "Cabinet Grotesk, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "24px"
+    fontWeight: 800
+    lineHeight: 1
+    letterSpacing: "-0.01em"
   label-ui:
-    fontFamily: "Array, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "14px"
-    fontWeight: 600
+    fontFamily: "Cabinet Grotesk, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "19px"
+    fontWeight: 800
     lineHeight: 1.45
-    letterSpacing: "0.06em"
+    letterSpacing: "0.04em"
 rounded:
   none: "0px"
   dot: "50%"
@@ -54,9 +60,6 @@ components:
     typography: "{typography.label-ui}"
     rounded: "{rounded.none}"
     padding: "12px 20px"
-  nav-link:
-    textColor: "{colors.signal-red}"
-    typography: "{typography.label-ui}"
 ---
 
 # Design System: UnitLabs
@@ -65,26 +68,28 @@ components:
 
 **Creative North Star: "The Dot-Matrix Manifesto"**
 
-One ink, one typeface, one grid. The page reads like a statement printed in red dots on
-cream paper: the wordmark is literally a grid of circles, and the Array typeface renders every
-headline in the same dotted texture, so the type and the logo are the same material. Nothing on
+One ink, one typeface, one grid. The page reads like a statement printed in red on cream
+paper. The dot grid lives in the mark alone: the wordmark and monogram are grids of circles, and
+the type around them is a narrow editorial grotesk (Cabinet Grotesk), so the mark is the one textured thing on
+the page. Nothing on
 the page is decorative. Depth, hierarchy and emphasis all come from size, weight, case and 1px
 rules, never from a second colour.
 
 The voice is plain-spoken. Sentences are short and declarative, set large, with generous
 vertical space between them. The system says as little as possible and lets the ink do the
 work. Interaction follows the same logic: things look printed, then flip like a switch on
-hover: an outline becomes solid. Nothing fades in, nothing scrolls into view.
+hover: an outline becomes solid. Nothing fades in, and nothing scrolls: the whole site is one
+screen.
 
 The user has rejected the crypto-site defaults outright: no glassmorphism or gradients, no dark
 mode, no stock imagery or 3D, and no colour beyond the two inks.
 
 **Key Characteristics:**
 - Two colours only: Signal Red on Cream Paper. No greys, tints or opacity tricks.
-- One typeface (Array) carrying every role from 14px labels to 84px display.
+- One typeface (Cabinet Grotesk) carrying every role from 19px labels to 96px display.
 - Structure drawn with 1px Signal Red rules that span the full viewport.
 - Square corners everywhere except the dots themselves, which are perfect circles.
-- Static page: hover transitions are the only motion.
+- One fixed screen with no scrolling; hover transitions are the only motion.
 
 ## Colors
 
@@ -105,36 +110,46 @@ tint of red, and no opacity used to fake a secondary tone. Hierarchy is the type
 **The Inversion Rule.** The only permitted colour change is a full swap: red on cream becomes
 cream on red for a hovered control. Partial fills and mixed states do not exist.
 
-Contrast note: the pair measures about 3.9:1, which passes WCAG AA for large text and fails it
-for body-size text. The user kept the palette knowingly (see PRODUCT.md); keep body copy short
-and at 17px or larger.
+**The Large Print Rule.** The pair measures 3.93:1, which passes WCAG AA only for large text.
+So the palette stays and the type does the work: anything meant to be read is set at WCAG
+"large" size, 24px or more at a regular weight, or 19px or more in bold (18.66px is the
+threshold; with Cabinet, bold means 800). No readable text goes below that, at any width.
 
 ## Typography
 
-**Display Font:** Array (Fontshare; weights 400, 600, 700) with ui-sans-serif, system-ui
-fallback
-**Body Font:** Array (same family)
-**Label Font:** Array 600, uppercase, tracked
+**Display Font:** Cabinet Grotesk (Fontshare), self-hosted from `app/fonts/` through
+`next/font/local` in weights 500 and 800, with a metric-adjusted fallback and ui-sans-serif,
+system-ui behind it
+**Body Font:** Cabinet Grotesk (same family)
+**Label Font:** Cabinet Grotesk 800, uppercase, tracked
 
-**Character:** Array is a geometric display face built from a dot grid, so at large sizes it
-reads as the same material as the wordmark. It is wide and loud; headlines wrap to three or four
-lines on desktop and that is expected. At body size the dots close up into a plain,
-slightly technical sans. Leave font smoothing at the browser default: `antialiased` thins the
-dots on macOS and makes the red read light.
+**Character:** Cabinet Grotesk is a narrow editorial grotesk, chosen by the user on 4 November
+2026 from a side-by-side sheet (it replaced General Sans, which had replaced the dot-matrix
+Array earlier that day). It runs light: its 400 is too thin for red on cream and its 700 reads
+as medium, so the page uses 500 for running text and 800 as the true bold. Because it is narrow,
+the display size goes up to 96px and headlines wrap to four lines on desktop. Leave font
+smoothing at the browser default: `antialiased` thins the strokes on macOS and makes the red
+read light.
 
 ### Hierarchy
-- **Display** (700, clamp(40px, 6vw, 84px), line-height 1, tracking -0.02em): the hero
+- **Display** (800, clamp(40px, min(7vw, 11svh), 96px), line-height 0.95, tracking -0.02em): the hero
   headline only.
-- **Headline** (700, clamp(34px, 5vw, 72px), line-height 1, tracking -0.02em): the closing
-  statement above the buttons; capped at 16ch measure.
-- **Body large** (400, clamp(18px, 1.6vw, 22px), line-height 1.4): the hero description,
-  capped at 34ch.
-- **Body** (400, 17px, line-height 1.45): everything else.
-- **Label UI** (600, 14px, tracking 0.06em, uppercase): nav link, bracket buttons, footer
-  text.
+- **Headline** (800, clamp(36px, 5.5vw, 80px), line-height 0.98, tracking -0.02em): the 404
+  statement only.
+- **Closing** (800, clamp(28px, 2.6vw, 40px), line-height 1.05, tracking -0.015em): the contact
+  line in the bottom band. Deliberately a second voice, far below the display size, so the
+  screen has one headline.
+- **Body large** (500, clamp(24px, 2vw, 28px), line-height 1.3): the hero description,
+  capped at 32ch.
+- **Body** (500, 17px, line-height 1.45): the inherited default; no visible copy uses it.
+- **Brand** (800, 24px, line-height 1, tracking -0.01em): the name in the nav lockup only.
+- **Label UI** (800, 19px, tracking 0.04em, uppercase): the bracket buttons. One shared rule in `globals.css`.
+
+All sizes are authored in rem (px equivalents above), so a reader's browser font-size setting
+scales the page.
 
 ### Named Rules
-**The One Face Rule.** Array only, in three weights. Hierarchy is carried by size, weight,
+**The One Face Rule.** Cabinet Grotesk only, in two weights (500, 800). Hierarchy is carried by size, weight,
 case and tracking, never by colour and never by a second family, including monospace for
 numbers.
 
@@ -144,18 +159,27 @@ numbers.
 ## Layout
 
 A single centred column, 1240px maximum, with a fluid side gutter (clamp(20px, 4vw, 56px)).
-The site is exactly two viewport-tall pages. Page one holds the nav bar at the top and the hero
-centred in the remaining height; page two holds the contact section centred in the remaining
-height with the footer bar pinned to its bottom edge. A 1px Signal Red rule runs edge to edge
-between the pages and above the footer, while the content stays within the column. Scrolling
-snaps to each page with proximity snapping, so a normal scroll settles on the next page.
+The site is one screen with no scrolling, built from real landmarks: `header` (brand) and `main`
+(hero, then the contact band). There is no footer. `.site` is a grid (`auto 1fr`) exactly 100svh
+tall with overflow hidden; `main` is `1fr auto`, so the hero takes the middle and centres its
+content, and the contact band sits on the bottom edge under a full-width 1px Signal Red rule,
+where the footer used to be. svh is the viewport with the mobile toolbar showing, so nothing
+lands under it. The display size is capped by height (11svh) as well as width, so the headline
+always fits.
 
-Vertical rhythm is generous: sections carry clamp(56px, 9vw, 120px) of padding top and bottom;
-the nav and footer bars carry 22px. The hero is a two-column grid (1.5fr / 1fr) that places
-the display headline left and the description right, aligned to the bottom edge. That grid is
-the whole hero.
+The hero is a single column: the display headline sets in two lines on desktop and tablet ("We
+build products for / the onchain world.") and three on a 375px phone, and the description sits
+directly under it on the same left edge, 32ch max, so it runs three even lines. The headline,
+description and contact line all share one left edge. clamp(24px, 5svh, 72px) above and below. The
+contact band is a wrapping flex row: closing line left, buttons right, clamp(20px, 3.5svh, 36px)
+of padding. The nav bar carries 22px.
 
-There is one breakpoint at 760px: the hero grid collapses to a single column. Everything else
+**Overflow fallback:** below 640px tall (or 720px tall when narrower than 760px) the screen is
+allowed to grow and scroll, so on a very small or landscape phone the contact buttons are never
+cut off. Every common size from 375×667 up fits without it.
+
+There is one width breakpoint at 760px: the hero grid collapses to a single column and the
+contact band stacks the closing line above the buttons. Everything else
 is fluid through clamp().
 
 ### Named Rules
@@ -185,28 +209,29 @@ buttons, rounded cards or soft edges.
 ### Buttons
 - **Character:** printed brackets that flip to solid on hover.
 - **Shape:** square (0px), 1px Signal Red border, 12px 20px padding.
-- **Text:** Label UI (600, 14px, tracking 0.06em, uppercase), wrapped in literal brackets
-  rendered by CSS: `[ X ]`, `[ GitHub ]`, `[ Contact ]`.
+- **Text:** Label UI (800, 19px, tracking 0.04em, uppercase), wrapped in literal brackets
+  rendered by CSS: `[ X ]`, `[ GitHub ]`, `[ hello@unitlabs.xyz ]`. The brackets carry empty
+  alt text (`content: "[ " / ""`) so screen readers skip them.
+- **Email button:** shows the address itself in its real lowercase (tracking 0.01em), so a
+  visitor with no mail app can still read and copy it.
+- **Accessible names:** X and GitHub keep their short visible labels; visually hidden text
+  makes them "UnitLabs on X (opens in a new tab)" and the same for GitHub.
 - **Hover:** background becomes Signal Red, text becomes Cream Paper, and the button rises
   2px; 0.2s transitions. No underline.
 - **Active:** rise returns to 0.
 - **Focus:** 2px Signal Red outline offset 4px (global link focus).
 - **Layout:** buttons sit in a flex row with 12px gaps and wrap on narrow screens.
 
-### Navigation
-- **Style:** a 22px-padded bar. At left, the brand lockup: the U monogram (26px wide) and the
-  name "UnitLabs" in Array 700 at 22px with line-height 1, 12px apart. At right, a single
-  uppercase Label UI link. No border on the bar itself; the hero below starts without a rule and
-  leads with the headline.
+### Header
+- **Style:** a 22px-padded bar holding only the brand lockup: the U monogram (26px wide) and the
+  name "UnitLabs" in Cabinet Grotesk 800 at 24px with line-height 1, 12px apart. It is a
+  `header`, not a `nav`: with one link home there is nothing to navigate. The nav "Contact" link
+  was removed on 4 November 2026 because the email button sits on the same screen. No border on
+  the bar itself; the hero below starts without a rule and leads with the headline.
 - **Optical alignment:** the U's tail hangs one dot row below its bowl, so the name is lifted
-  1.5px above the box centre to sit on the bowl's centre. Re-measure if either size changes.
+  1.5px above the box centre to sit on the bowl's centre. Re-measure if either size or the face changes.
 - **Brand hover:** none. The lockup is a home link but does not underline.
-- **Hover:** underline with 0.18em offset (global link hover). No colour change.
 - **Mobile:** unchanged; the bar is already minimal.
-
-### Footer bar
-- **Style:** 22px bar above a full-width rule; copyright in Label UI on the left,
-  20px monogram on the right.
 
 ### Wordmark and monogram (signature)
 - **Source:** circle coordinates in `lib/dots.ts` (318 dots for UNIT LABS, 48 for the U),
@@ -216,7 +241,7 @@ buttons, rounded cards or soft edges.
   with r 15 instead of 13.6 so the dots overlap and the mark reads solid at nav size; the
   wordmark data keeps the kissing-dot radius. The full wordmark is not on the page today and
   lives only in the social preview image and the data file.
-- **Sizes:** nav monogram 26px; footer monogram 22px; app icon is the lowercase rounded-square
+- **Sizes:** nav monogram 26px; app icon is the lowercase rounded-square
   variant from Frame 5.
 
 ### Named Rules
@@ -232,16 +257,18 @@ buttons, rounded cards or soft edges.
   only structural lines.
 - **Do** render the wordmark and monogram from the circle data in `lib/dots.ts` as SVG so
   they stay crisp; never rasterise or re-trace them.
-- **Do** carry hierarchy with Array's size, weight, case and tracking; three weights (400,
-  600, 700) are enough.
+- **Do** carry hierarchy with Cabinet Grotesk's size, weight, case and tracking; two weights (500,
+  800) are enough.
 - **Do** keep copy plain-spoken: one sentence per headline, capped measures, no adjectives for
   their own sake.
-- **Do** keep hover as the only motion: a 0.2s inversion on buttons and an underline on links.
+- **Do** keep motion to hover: a 0.2s inversion on buttons and an underline on links. Hover
+  styles sit inside `@media (hover: hover)` so a tap never sticks.
 
 ### Don't:
 - **Don't** use glassmorphism, gradients, glows, blur panels or gradient text.
 - **Don't** add a dark mode; Cream Paper is the only background.
 - **Don't** use stock imagery, photography, illustrations or 3D shapes.
 - **Don't** introduce a third colour, a grey, a tint of red, or opacity used as a tone.
-- **Don't** add entrance, scroll or loading animation; the page is static by decision.
+- **Don't** add entrance, scroll or loading animation, or make the page scroll; it is one
+  static screen by decision.
 - **Don't** round corners, add cards or background panels, or reach for a second typeface.
