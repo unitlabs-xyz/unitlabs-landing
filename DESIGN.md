@@ -167,10 +167,9 @@ numbers.
 
 A single centred column, 1240px maximum, with a fluid side gutter (clamp(20px, 4vw, 56px)).
 The site is one screen with no scrolling, built from real landmarks: `header` (brand) and `main`
-(hero, then the contact band). There is no footer. `.site` is a grid (`auto 1fr`) exactly 100svh
-tall with overflow hidden; `main` is `1fr auto`, so the hero takes the middle and centres its
-content, and the contact band sits on the bottom edge under a full-width 1px Signal Red rule,
-where the footer used to be. svh is the viewport with the mobile toolbar showing, so nothing
+(hero, then the contact band). There is no footer. `.site` is a grid (`auto 1fr`) with a minimum height of 100svh; `main` is
+`1fr auto`, so the hero takes the middle and centres its content, and the contact band sits on
+the bottom edge under a full-width 1px Signal Red rule, where the footer used to be. svh is the viewport with the mobile toolbar showing, so nothing
 lands under it. The display size is capped by height (11svh) as well as width, so the headline
 always fits.
 
@@ -181,9 +180,10 @@ description and contact line all share one left edge. clamp(24px, 5svh, 72px) ab
 contact band is a wrapping flex row: closing line left, buttons right, clamp(20px, 3.5svh, 36px)
 of padding. The nav bar carries 22px.
 
-**Overflow fallback:** below 640px tall (or 720px tall when narrower than 760px) the screen is
-allowed to grow and scroll, so on a very small or landscape phone the contact buttons are never
-cut off. Every common size from 375×667 up fits without it.
+**Never clip:** the height is a minimum, not a fixed value, and nothing hides overflow. At every
+common size (375×667 up to 1920×1080) the page is exactly one screen; when it can't be (a
+landscape phone, or a reader's large text setting) it grows and scrolls instead of cutting off
+the contact buttons.
 
 There is one width breakpoint at 760px: the hero grid collapses to a single column and the
 contact band stacks the closing line above the buttons. Everything else
