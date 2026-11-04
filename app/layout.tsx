@@ -16,7 +16,10 @@ const cabinetGrotesk = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://unitlabs.xyz"),
-  title: "UnitLabs",
+  title: {
+    default: "UnitLabs · We build products for the onchain world",
+    template: "%s · UnitLabs",
+  },
   description:
     "UnitLabs is an independent product lab building crypto-native products, protocols, and financial infrastructure.",
   openGraph: {

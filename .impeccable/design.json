@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-24T11:31:41Z",
+  "generatedAt": "2026-11-04T10:52:02+00:00",
   "title": "Design System: UnitLabs",
   "extensions": {
     "colorMeta": {
@@ -38,23 +38,31 @@
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "The hero headline only."
+        "purpose": "The hero headline only; two lines on desktop, three on a phone."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "The closing statement above the buttons; 16ch measure."
+        "purpose": "The 404 statement only."
+      },
+      "closing": {
+        "displayName": "Closing",
+        "purpose": "The contact line in the bottom band; a second voice far below the display."
       },
       "body-large": {
         "displayName": "Body large",
-        "purpose": "The hero description; 34ch measure."
+        "purpose": "The hero description; 32ch measure, three lines."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Everything else."
+        "purpose": "Inherited default; no visible copy uses it."
+      },
+      "brand": {
+        "displayName": "Brand",
+        "purpose": "The name in the header lockup only."
       },
       "label-ui": {
         "displayName": "Label UI",
-        "purpose": "Nav link, bracket buttons, footer text."
+        "purpose": "Bracket buttons."
       }
     },
     "shadows": [],
@@ -74,6 +82,10 @@
       {
         "name": "stack",
         "value": "760px"
+      },
+      {
+        "name": "short-screen-scroll",
+        "value": "max-height 640px (720px when under 760px wide)"
       }
     ]
   },
@@ -82,17 +94,25 @@
       "name": "Bracket Button",
       "kind": "button",
       "refersTo": "button-bracket",
-      "description": "Outlined, uppercase, wrapped in literal brackets; inverts to solid red on hover.",
-      "html": "<a class=\"ds-btn-bracket\" href=\"#\">Contact</a>",
-      "css": ".ds-btn-bracket { display: inline-block; font-family: 'Array', ui-sans-serif, system-ui, sans-serif; font-weight: 700; font-size: 19px; letter-spacing: .04em; text-transform: uppercase; color: var(--ink, #E02329); background: transparent; padding: 12px 20px; border: 1px solid var(--ink, #E02329); border-radius: 0; text-decoration: none; transition: background .2s, color .2s, transform .2s cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-bracket::before { content: '[ '; } .ds-btn-bracket::after { content: ' ]'; } .ds-btn-bracket:hover { background: var(--ink, #E02329); color: var(--bg, #EDEBD6); transform: translateY(-2px); } .ds-btn-bracket:active { transform: translateY(0); } .ds-btn-bracket:focus-visible { outline: 2px solid var(--ink, #E02329); outline-offset: 4px; }"
+      "description": "Outlined label button with CSS brackets; flips to solid red on hover.",
+      "html": "<a class=\"ds-btn-bracket\" href=\"#\">GitHub</a>",
+      "css": ".ds-btn-bracket { display: inline-block; font-family: var(--font-sans, 'Cabinet Grotesk'), ui-sans-serif, system-ui, sans-serif; font-weight: 800; font-size: 1.1875rem; line-height: 1.45; letter-spacing: .04em; text-transform: uppercase; color: var(--ink, #E02329); background: transparent; padding: 12px 20px; border: 1px solid var(--ink, #E02329); border-radius: 0; text-decoration: none; transition: background .2s, color .2s, transform .2s cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-bracket::before { content: '[ '; } .ds-btn-bracket::after { content: ' ]'; } .ds-btn-bracket:hover { background: var(--ink, #E02329); color: var(--bg, #EDEBD6); transform: translateY(-2px); } .ds-btn-bracket:active { transform: translateY(0); background: var(--ink, #E02329); color: var(--bg, #EDEBD6); } .ds-btn-bracket:focus-visible { outline: 2px solid var(--ink, #E02329); outline-offset: 4px; }"
     },
     {
-      "name": "Nav Bar",
+      "name": "Email Button",
+      "kind": "button",
+      "refersTo": "button-bracket",
+      "description": "Bracket button that shows the address in its real lowercase, so it can be read and copied.",
+      "html": "<a class=\"ds-btn-bracket ds-btn-email\" href=\"mailto:hello@unitlabs.xyz\">hello@unitlabs.xyz</a>",
+      "css": ".ds-btn-bracket { display: inline-block; font-family: var(--font-sans, 'Cabinet Grotesk'), ui-sans-serif, system-ui, sans-serif; font-weight: 800; font-size: 1.1875rem; line-height: 1.45; letter-spacing: .04em; text-transform: uppercase; color: var(--ink, #E02329); background: transparent; padding: 12px 20px; border: 1px solid var(--ink, #E02329); border-radius: 0; text-decoration: none; transition: background .2s, color .2s, transform .2s cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-bracket::before { content: '[ '; } .ds-btn-bracket::after { content: ' ]'; } .ds-btn-email { text-transform: none; letter-spacing: .01em; } .ds-btn-bracket:hover { background: var(--ink, #E02329); color: var(--bg, #EDEBD6); transform: translateY(-2px); } .ds-btn-bracket:focus-visible { outline: 2px solid var(--ink, #E02329); outline-offset: 4px; }"
+    },
+    {
+      "name": "Header",
       "kind": "nav",
-      "refersTo": "nav-link",
-      "description": "Brand lockup (monogram + name) at left, single uppercase link at right; the link underlines on hover.",
-      "html": "<nav class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\"><svg class=\"ds-mark ds-mark-sm\" viewBox=\"0 0 308.3 428.8\" fill=\"currentColor\" role=\"img\" aria-label=\"UnitLabs\"><circle cx=\"13.6\" cy=\"13.6\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"13.7\" r=\"13.6\"/><circle cx=\"254.6\" cy=\"13.6\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"13.7\" r=\"13.6\"/><circle cx=\"13.7\" cy=\"53.8\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"53.7\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"53.8\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"53.8\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"94.0\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"94.0\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"94.0\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"94.0\" r=\"13.6\"/><circle cx=\"53.7\" cy=\"134.1\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"134.1\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"134.1\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"134.2\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"174.3\" r=\"13.6\"/><circle cx=\"53.7\" cy=\"174.3\" r=\"13.6\"/><circle cx=\"254.6\" cy=\"174.3\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"174.3\" r=\"13.6\"/><circle cx=\"13.7\" cy=\"214.4\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"214.4\" r=\"13.6\"/><circle cx=\"254.6\" cy=\"214.5\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"214.4\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"254.6\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"254.6\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"254.6\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"254.6\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"93.9\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"214.4\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"93.9\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"134.1\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"174.3\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"214.4\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"93.9\" cy=\"375.1\" r=\"13.6\"/><circle cx=\"134.1\" cy=\"375.0\" r=\"13.6\"/><circle cx=\"174.2\" cy=\"375.0\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"375.2\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"375.2\" r=\"13.6\"/><circle cx=\"214.4\" cy=\"375.1\" r=\"13.6\"/><circle cx=\"53.9\" cy=\"415.1\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"415.2\" r=\"13.6\"/></svg><span>UnitLabs</span></a><a class=\"ds-nav-link\" href=\"#\">Contact</a></nav>",
-      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; color: var(--ink, #E02329); } .ds-brand { display: inline-flex; align-items: center; gap: 12px; font-family: 'Array', ui-sans-serif, system-ui, sans-serif; font-weight: 700; font-size: 22px; line-height: 1; letter-spacing: -.01em; color: var(--ink, #E02329); text-decoration: none; } .ds-mark-sm { width: 26px; height: auto; } .ds-brand span { transform: translateY(-1.5px); } .ds-nav-link { font-family: 'Array', ui-sans-serif, system-ui, sans-serif; font-weight: 700; font-size: 19px; letter-spacing: .04em; text-transform: uppercase; color: var(--ink, #E02329); text-decoration: none; } .ds-nav-link:hover { text-decoration: underline; text-underline-offset: .18em; } .ds-nav-link:focus-visible { outline: 2px solid var(--ink, #E02329); outline-offset: 4px; }"
+      "refersTo": "",
+      "description": "Brand-only header bar: U monogram and the name, linking home.",
+      "html": "<header class=\"ds-header\"><a class=\"ds-brand\" href=\"/\"><svg class=\"ds-mark\" viewBox=\"0 0 308.3 428.8\" fill=\"currentColor\" aria-hidden=\"true\"><circle cx=\"13.6\" cy=\"13.6\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"13.7\" r=\"13.6\"/><circle cx=\"254.6\" cy=\"13.6\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"13.7\" r=\"13.6\"/><circle cx=\"13.7\" cy=\"53.8\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"53.7\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"53.8\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"53.8\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"94.0\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"94.0\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"94.0\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"94.0\" r=\"13.6\"/><circle cx=\"53.7\" cy=\"134.1\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"134.1\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"134.1\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"134.2\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"174.3\" r=\"13.6\"/><circle cx=\"53.7\" cy=\"174.3\" r=\"13.6\"/><circle cx=\"254.6\" cy=\"174.3\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"174.3\" r=\"13.6\"/><circle cx=\"13.7\" cy=\"214.4\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"214.4\" r=\"13.6\"/><circle cx=\"254.6\" cy=\"214.5\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"214.4\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"254.6\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"254.6\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"254.6\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"254.6\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"93.9\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"214.4\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"294.7\" cy=\"294.7\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"93.9\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"134.1\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"174.3\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"214.4\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"254.5\" cy=\"334.9\" r=\"13.6\"/><circle cx=\"93.9\" cy=\"375.1\" r=\"13.6\"/><circle cx=\"134.1\" cy=\"375.0\" r=\"13.6\"/><circle cx=\"174.2\" cy=\"375.0\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"375.2\" r=\"13.6\"/><circle cx=\"53.8\" cy=\"375.2\" r=\"13.6\"/><circle cx=\"214.4\" cy=\"375.1\" r=\"13.6\"/><circle cx=\"53.9\" cy=\"415.1\" r=\"13.6\"/><circle cx=\"13.6\" cy=\"415.2\" r=\"13.6\"/></svg><span>UnitLabs</span></a></header>",
+      "css": ".ds-header { display: flex; align-items: center; padding: 22px 0; color: var(--ink, #E02329); } .ds-brand { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-sans, 'Cabinet Grotesk'), ui-sans-serif, system-ui, sans-serif; font-weight: 800; font-size: 1.5rem; line-height: 1; letter-spacing: -.01em; color: inherit; text-decoration: none; } .ds-mark { width: 26px; height: auto; } .ds-brand span { transform: translateY(-1.5px); } .ds-brand:focus-visible { outline: 2px solid var(--ink, #E02329); outline-offset: 4px; }"
     },
     {
       "name": "Monogram",
@@ -103,23 +123,31 @@
       "css": ".ds-mark { width: 64px; height: auto; color: var(--ink, #E02329); }"
     },
     {
+      "name": "Contact Band",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Bottom band under a full-width rule: closing line left, bracket buttons right.",
+      "html": "<section class=\"ds-band\"><h2 class=\"ds-closing\">Want to work with us? Say hello.</h2><div class=\"ds-band-buttons\"><a class=\"ds-btn-bracket\" href=\"#\">X</a><a class=\"ds-btn-bracket\" href=\"#\">GitHub</a></div></section>",
+      "css": ".ds-band { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; padding: 28px 0; border-top: 1px solid var(--ink, #E02329); color: var(--ink, #E02329); } .ds-closing { margin: 0; font-family: var(--font-sans, 'Cabinet Grotesk'), ui-sans-serif, system-ui, sans-serif; font-weight: 800; font-size: clamp(1.75rem, 2.6vw, 2.5rem); line-height: 1.05; letter-spacing: -.015em; } .ds-band-buttons { display: flex; flex-wrap: wrap; gap: 12px; } .ds-btn-bracket { display: inline-block; font-family: var(--font-sans, 'Cabinet Grotesk'), ui-sans-serif, system-ui, sans-serif; font-weight: 800; font-size: 1.1875rem; line-height: 1.45; letter-spacing: .04em; text-transform: uppercase; color: var(--ink, #E02329); padding: 12px 20px; border: 1px solid var(--ink, #E02329); text-decoration: none; } .ds-btn-bracket::before { content: '[ '; } .ds-btn-bracket::after { content: ' ]'; } .ds-btn-bracket:hover { background: var(--ink, #E02329); color: var(--bg, #EDEBD6); }"
+    },
+    {
       "name": "Display Headline",
       "kind": "custom",
       "refersTo": "",
-      "description": "The hero statement in Array 700; wraps to several short lines by design.",
-      "html": "<h1 class=\"ds-display\">We build products for the onchain world.</h1>",
-      "css": ".ds-display { margin: 0; font-family: 'Array', ui-sans-serif, system-ui, sans-serif; font-weight: 700; font-size: 56px; line-height: 1; letter-spacing: -.02em; color: var(--ink, #E02329); max-width: 12ch; }"
+      "description": "The hero statement and the description under it on one left edge.",
+      "html": "<div class=\"ds-hero\"><h1 class=\"ds-display\">We build products for the onchain world.</h1><p class=\"ds-lede\">UnitLabs is an independent product lab building crypto-native products, protocols, and financial infrastructure.</p></div>",
+      "css": ".ds-hero { display: grid; gap: 32px; color: var(--ink, #E02329); } .ds-display { margin: 0; font-family: var(--font-sans, 'Cabinet Grotesk'), ui-sans-serif, system-ui, sans-serif; font-weight: 800; font-size: clamp(2.5rem, 7vw, 6rem); line-height: .95; letter-spacing: -.02em; text-wrap: balance; } .ds-lede { margin: 0; max-width: 32ch; font-family: var(--font-sans, 'Cabinet Grotesk'), ui-sans-serif, system-ui, sans-serif; font-weight: 500; font-size: clamp(1.5rem, 2vw, 1.75rem); line-height: 1.3; text-wrap: pretty; }"
     }
   ],
   "narrative": {
     "northStar": "The Dot-Matrix Manifesto",
-    "overview": "One ink, one typeface, one grid. The page reads like a statement printed in red dots on cream paper: the wordmark is literally a grid of circles, and the Array typeface renders every headline in the same dotted texture, so the type and the logo are the same material. Nothing on the page is decorative. Depth, hierarchy and emphasis all come from size, weight, case and 1px rules, never from a second colour.\n\nThe voice is plain-spoken. Sentences are short and declarative, set large, with generous vertical space between them. The system says as little as possible and lets the ink do the work. Interaction follows the same logic: things look printed, then flip like a switch on hover: an outline becomes solid. Nothing fades in, nothing scrolls into view.\n\nThe user has rejected the crypto-site defaults outright: no glassmorphism or gradients, no dark mode, no stock imagery or 3D, and no colour beyond the two inks.",
+    "overview": "**Creative North Star: \"The Dot-Matrix Manifesto\"**\n\nOne ink, one typeface, one grid. The page reads like a statement printed in red on cream paper. The dot grid lives in the mark alone: the wordmark and monogram are grids of circles, and the type around them is a narrow editorial grotesk (Cabinet Grotesk), so the mark is the one textured thing on the page. Nothing on the page is decorative. Depth, hierarchy and emphasis all come from size, weight, case and 1px rules, never from a second colour.\n\nThe voice is plain-spoken. Sentences are short and declarative, set large, with generous vertical space between them. The system says as little as possible and lets the ink do the work. Interaction follows the same logic: things look printed, then flip like a switch on hover: an outline becomes solid. Nothing fades in, and nothing scrolls: the whole site is one screen.\n\nThe user has rejected the crypto-site defaults outright: no glassmorphism or gradients, no dark mode, no stock imagery or 3D, and no colour beyond the two inks.",
     "keyCharacteristics": [
       "Two colours only: Signal Red on Cream Paper. No greys, tints or opacity tricks.",
-      "One typeface (Array) carrying every role from 19px labels to 84px display.",
+      "One typeface (Cabinet Grotesk) carrying every role from 19px labels to 96px display.",
       "Structure drawn with 1px Signal Red rules that span the full viewport.",
       "Square corners everywhere except the dots themselves, which are perfect circles.",
-      "Static page: hover transitions are the only motion."
+      "One fixed screen with no scrolling; hover transitions are the only motion."
     ],
     "rules": [
       {
@@ -133,8 +161,13 @@
         "section": "colors"
       },
       {
+        "name": "The Large Print Rule",
+        "body": "The pair measures 3.93:1, which passes WCAG AA only for large text. So the palette stays and the type does the work: anything meant to be read is set at WCAG \"large\" size, 24px or more at a regular weight, or 19px or more in bold (18.66px is the threshold; with Cabinet, bold means 800). No readable text goes below that, at any width.",
+        "section": "colors"
+      },
+      {
         "name": "The One Face Rule",
-        "body": "Array only, in three weights. Hierarchy is carried by size, weight, case and tracking, never by colour and never by a second family, including monospace for numbers.",
+        "body": "Cabinet Grotesk only, in two weights (500, 800). Hierarchy is carried by size, weight, case and tracking, never by colour and never by a second family, including monospace for numbers.",
         "section": "typography"
       },
       {
@@ -161,17 +194,17 @@
     "dos": [
       "Do set every colour from the two tokens: Signal Red (#E02329) on Cream Paper (#EDEBD6), inverted only for a hovered control.",
       "Do draw structure with 1px Signal Red rules that span the full viewport; they are the only structural lines.",
-      "Do render the wordmark and monogram from the circle data in lib/dots.ts as SVG so they stay crisp; never rasterise or re-trace them.",
-      "Do carry hierarchy with Array's size, weight, case and tracking; two weights (400, 700) are enough.",
+      "Do render the wordmark and monogram from the circle data in `lib/dots.ts` as SVG so they stay crisp; never rasterise or re-trace them.",
+      "Do carry hierarchy with Cabinet Grotesk's size, weight, case and tracking; two weights (500, 800) are enough.",
       "Do keep copy plain-spoken: one sentence per headline, capped measures, no adjectives for their own sake.",
-      "Do keep hover as the only motion: a 0.2s inversion on buttons and an underline on links."
+      "Do keep motion to hover: a 0.2s inversion on buttons and an underline on links. Hover styles sit inside `@media (hover: hover)` so a tap never sticks."
     ],
     "donts": [
       "Don't use glassmorphism, gradients, glows, blur panels or gradient text.",
       "Don't add a dark mode; Cream Paper is the only background.",
       "Don't use stock imagery, photography, illustrations or 3D shapes.",
       "Don't introduce a third colour, a grey, a tint of red, or opacity used as a tone.",
-      "Don't add entrance, scroll or loading animation; the page is static by decision.",
+      "Don't add entrance, scroll or loading animation, or make the page scroll; it is one static screen by decision.",
       "Don't round corners, add cards or background panels, or reach for a second typeface."
     ]
   }

@@ -7,7 +7,7 @@ colors:
 typography:
   display:
     fontFamily: "Cabinet Grotesk, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(40px, 7vw, 96px)"
+    fontSize: "clamp(40px, min(7vw, 11svh), 96px)"
     fontWeight: 800
     lineHeight: 0.95
     letterSpacing: "-0.02em"
@@ -27,6 +27,12 @@ typography:
     fontSize: "17px"
     fontWeight: 500
     lineHeight: 1.45
+  closing:
+    fontFamily: "Cabinet Grotesk, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(28px, 2.6vw, 40px)"
+    fontWeight: 800
+    lineHeight: 1.05
+    letterSpacing: "-0.015em"
   brand:
     fontFamily: "Cabinet Grotesk, ui-sans-serif, system-ui, sans-serif"
     fontSize: "24px"
@@ -46,7 +52,8 @@ spacing:
   gap-sm: "12px"
   bar: "22px"
   gutter: "clamp(20px, 4vw, 56px)"
-  section: "clamp(56px, 9vw, 120px)"
+  hero-block: "clamp(24px, 5svh, 72px)"
+  band-block: "clamp(20px, 3.5svh, 36px)"
 components:
   button-bracket:
     backgroundColor: "transparent"
